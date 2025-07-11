@@ -49,7 +49,11 @@ format_retrieve_result = ChatPromptTemplate.from_template(
 #        "question": "python中如何调用图像局部重绘",
 #  })))
 
-
+"""
+question
+chat_history
+file_list
+"""
 prompt_chain = (RunnablePassthrough.assign(retrieve_info=format_retrieve_result)
       |  RunnablePassthrough.assign(
         # 如果需要检索（retrieve_flag为Y），则调用inject_retrieve_content生成包含检索内容的提示词
